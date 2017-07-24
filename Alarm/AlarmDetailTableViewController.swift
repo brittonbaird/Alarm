@@ -10,6 +10,20 @@ import UIKit
 
 class AlarmDetailTableViewController: UITableViewController {
 
-
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Makes the button rounded
+        disableButton.layer.cornerRadius = 10
+        disableButton.clipsToBounds = true
+    }
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var disableButton: UIButton!
+    
+    @IBAction func disableButtonTapped() {
+        
+    }
 }
