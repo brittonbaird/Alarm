@@ -56,6 +56,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="alarmSwitch" destination="xvW-Iq-Rfq" id="NqT-xM-nrH"/>
+                                    <outlet property="nameLabel" destination="5fj-lS-zl0" id="Ui4-Jv-0bh"/>
+                                    <outlet property="timeLabel" destination="KNn-IT-yJr" id="4r8-Zh-KTQ"/>
                                     <segue destination="IyC-fi-zLc" kind="show" id="mOV-17-L2t"/>
                                 </connections>
                             </tableViewCell>
@@ -77,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="1104.8" y="145.27736131934034"/>
         </scene>
-        <!--Alarm Detail Table View Controller-->
+        <!--Alarm Title-->
         <scene sceneID="Amf-qz-L4u">
             <objects>
                 <tableViewController id="IyC-fi-zLc" customClass="AlarmDetailTableViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,15 +91,15 @@
                         <sections>
                             <tableViewSection id="tCA-42-IGN">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="ULP-Qx-pZP">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="142"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="174" id="ULP-Qx-pZP">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ULP-Qx-pZP" id="fDD-4h-Tr8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="173.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NmV-kd-iEm">
-                                                    <rect key="frame" x="27.5" y="-37.5" width="320" height="216.5"/>
+                                                    <rect key="frame" x="27.5" y="-21.5" width="320" height="216.5"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="522624577.52148497">
                                                         <!--2017-07-24 21:29:37 +0000-->
                                                     </date>
@@ -113,7 +116,7 @@
                             <tableViewSection id="GFK-mm-GDO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HmM-sI-pr0">
-                                        <rect key="frame" x="0.0" y="213" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="245" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HmM-sI-pr0" id="NDL-Uw-IH3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -138,7 +141,7 @@
                             <tableViewSection id="Sfx-vY-kyf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k3n-e6-rx4">
-                                        <rect key="frame" x="0.0" y="293" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="325" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k3n-e6-rx4" id="EL5-KS-pMd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -152,6 +155,9 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" red="1" green="0.24351236776707064" blue="0.15243565441847284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="disableButtonTapped" destination="IyC-fi-zLc" eventType="touchDown" id="mJm-4A-hWv"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -164,6 +170,13 @@
                             <outlet property="delegate" destination="IyC-fi-zLc" id="Swq-ha-gFo"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Alarm Title" id="Fw2-b4-Q5F">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NqH-XN-eF7">
+                            <connections>
+                                <action selector="saveButtonTapped" destination="IyC-fi-zLc" id="8vT-2t-GkN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="NmV-kd-iEm" id="B1c-PC-wLy"/>
                         <outlet property="disableButton" destination="xpM-Er-L7w" id="Kye-4X-7Fg"/>

@@ -26,4 +26,8 @@ class AlarmDetailTableViewController: UITableViewController {
     @IBAction func disableButtonTapped() {
         
     }
+    
+    @IBAction func saveButtonTapped() {
+        
+    }
 }
