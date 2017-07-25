@@ -14,6 +14,7 @@ protocol SwitchTableViewCellDelegate: class {
 
 class SwitchTableViewCell: UITableViewCell {
     
+    
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var alarmSwitch: UISwitch!

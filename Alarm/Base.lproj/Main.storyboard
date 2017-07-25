@@ -59,7 +59,7 @@
                                     <outlet property="alarmSwitch" destination="xvW-Iq-Rfq" id="NqT-xM-nrH"/>
                                     <outlet property="nameLabel" destination="5fj-lS-zl0" id="Ui4-Jv-0bh"/>
                                     <outlet property="timeLabel" destination="KNn-IT-yJr" id="4r8-Zh-KTQ"/>
-                                    <segue destination="IyC-fi-zLc" kind="show" id="mOV-17-L2t"/>
+                                    <segue destination="IyC-fi-zLc" kind="show" identifier="toEditAlarm" id="mOV-17-L2t"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,7 +71,7 @@
                     <navigationItem key="navigationItem" id="9xi-HO-ufq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Htz-P8-tZZ">
                             <connections>
-                                <segue destination="IyC-fi-zLc" kind="show" id="D0H-Dn-eic"/>
+                                <segue destination="IyC-fi-zLc" kind="show" identifier="toAddAlarm" id="D0H-Dn-eic"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -151,12 +151,12 @@
                                                     <rect key="frame" x="8" y="6" width="359" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.24351236779999999" blue="0.15243565440000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <state key="normal" title="Disable">
+                                                    <state key="normal">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" red="1" green="0.24351236776707064" blue="0.15243565441847284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="disableButtonTapped" destination="IyC-fi-zLc" eventType="touchDown" id="mJm-4A-hWv"/>
+                                                        <action selector="disableButtonTapped" destination="IyC-fi-zLc" eventType="touchUpInside" id="jvI-5D-oln"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -178,9 +178,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="NmV-kd-iEm" id="B1c-PC-wLy"/>
-                        <outlet property="disableButton" destination="xpM-Er-L7w" id="Kye-4X-7Fg"/>
+                        <outlet property="datePicker" destination="NmV-kd-iEm" id="Yoy-8u-ja2"/>
+                        <outlet property="disableButton" destination="xpM-Er-L7w" id="p4Y-wi-nRB"/>
                         <outlet property="titleText" destination="Fcn-MS-IuG" id="pG6-On-5SP"/>
+                        <outlet property="topTitleText" destination="Fw2-b4-Q5F" id="P8V-dj-c76"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjj-EO-Bev" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,6 +208,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mOV-17-L2t"/>
+        <segue reference="D0H-Dn-eic"/>
     </inferredMetricsTieBreakers>
 </document>

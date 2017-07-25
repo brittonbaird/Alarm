@@ -27,6 +27,14 @@ class AlarmController {
         self.alarms = self.mockAlarms
     }
     
+    func numberOfAlarms() -> Int {
+        return alarms.count
+    }
+    
+    func alarm(at indexPath: IndexPath) -> Alarm {
+        return alarms[indexPath.row]
+    }
+    
     func addAlarm(fireTimeFromMidnight: TimeInterval, name: String) -> Alarm {
         let alarm = Alarm(fireTimeFromMidnight: fireTimeFromMidnight, name: name)
         alarms.append(alarm)
@@ -42,6 +50,10 @@ class AlarmController {
     func delete(alarm: Alarm) {
         guard let index = alarms.index(of: alarm) else { return }
         alarms.remove(at: index)
+    }
+    
+    func toggleEnabled(alarm: Alarm) {
+        alarm.enabled = !alarm.enabled
     }
     
 }
